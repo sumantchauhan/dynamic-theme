@@ -23,6 +23,10 @@ import Theme from "./Theme";
 import Chart from "../Chart";
 import DataTables from "../DataTables";
 import DataLists from "../DataLists";
+import TreeTransfer from "../TreeTransfer";
+import GraphOrg from "../Bulkangraph/OrgChart";
+import GroupHierarchy from "../Bulkangraph/GroupHierarchy";
+import TransferList from "../TransferList/TransferList";
 
 function Copyright() {
   return (
@@ -211,8 +215,23 @@ const Dashboard = () => {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={12} lg={12}>
+              <Paper>
+                <TransferList />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12}>
+              <Paper>
+                <GraphOrg />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12}>
               <Paper className={fixedHeightPaper}>
                 <Chart />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12}>
+              <Paper className={fixedHeightPaper}>
+                <GroupHierarchy />
               </Paper>
             </Grid>
 
@@ -224,6 +243,11 @@ const Dashboard = () => {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <DataLists />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12}>
+              <Paper className={fixedHeightPaper}>
+                <TreeTransfer />
               </Paper>
             </Grid>
           </Grid>
